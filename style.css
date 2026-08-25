@@ -1,0 +1,313 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f0e4;color:#3d2926;font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}.top-line{height:14px;background:#084d4f}.site-header{height:104px;background:#fbf5e9;border-bottom:1px solid rgba(124,88,47,.18);position:relative;z-index:10}.nav-shell{height:100%;max-width:1240px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}.brand{width:122px;height:104px;display:flex;align-items:center;justify-content:flex-start;flex:none}.brand img{width:108px;height:101px;object-fit:contain;display:block}.nav-links{display:flex;align-items:center;gap:32px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}.nav-links>a{padding:14px 0;transition:.25s}.nav-links>a:hover,.nav-links>a.active{color:#7c1836}.nav-outline,.nav-solid{padding:12px 20px!important;border:1px solid #bd7b1d}.nav-solid{background:#b97816;color:#fff!important}.menu-toggle{display:none;background:none;border:0;font-size:24px;color:#7c1836}.hero{max-width:1440px;margin:0 auto;min-height:580px;display:grid;grid-template-columns:48% 52%;background:#f6ead7;overflow:hidden}.hero-copy{padding:76px 54px 68px 80px;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 10% 90%,rgba(177,111,32,.08),transparent 28%),#f6ead7;position:relative}.hero-copy:before{content:"";position:absolute;left:0;top:0;width:170px;height:170px;border-left:1px solid rgba(180,127,44,.25);border-bottom:1px solid rgba(180,127,44,.25);border-radius:0 0 100% 0}.eyebrow,.section-kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#9a6422;font-weight:600}.hero h1{font:600 clamp(48px,5vw,72px)/.94 "Cormorant Garamond",serif;margin:18px 0 0;color:#701c35}.hero h1 span{color:#7f5a26}.ornament{display:flex;align-items:center;gap:12px;margin:18px 0 12px;width:260px}.ornament i{height:1px;background:#c69752;flex:1}.ornament b{font-size:19px;color:#b67a20}.hero h2{font:600 32px/1 "Cormorant Garamond",serif;color:#a26b26;margin:0 0 18px}.hero-copy>p{max-width:560px;font:400 17px/1.75 "Cormorant Garamond",serif;color:#553b34;margin:0}.hero-actions{display:flex;align-items:center;gap:26px;margin-top:28px}.button{display:inline-flex;align-items:center;gap:18px;padding:15px 23px;border:1px solid #b97816;text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:600}.button.primary{background:#084d4f;color:#fff;border-color:#084d4f}.button.primary:hover{background:#063e40}.button.outline{background:transparent;color:#7c1836}.text-link{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#7c1836;font-weight:600}.text-link span{margin-left:8px}.hero-image{min-height:580px;background-image:url('assets/hero-model.jpg');background-size:cover;background-position:center right}.promise{background:#761c36;color:#fff;display:grid;grid-template-columns:repeat(4,1fr);padding:27px max(5vw,50px);gap:0}.promise>div{padding:0 28px;min-height:72px;border-right:1px solid rgba(230,185,90,.3);display:grid;grid-template-columns:38px 1fr;grid-template-rows:auto auto;column-gap:13px}.promise>div:last-child{border:0}.promise span{grid-row:1/3;color:#d8a746;font:28px/1 "Cormorant Garamond",serif}.promise strong{text-transform:uppercase;letter-spacing:.12em;font-size:12px}.promise p{font:13px/1.5 "Cormorant Garamond",serif;color:#f6e6d2;margin:6px 0 0}.section{padding:96px max(6vw,50px)}.intro{background:#fbf5e9}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;margin-top:22px;align-items:end}.intro h2,.section-heading h2,.story-copy h2,.enquire h2,.contact h2{font:600 clamp(40px,4vw,60px)/.95 "Cormorant Garamond",serif;color:#701c35;margin:0}.intro h2 em,.section-heading h2 em,.story-copy h2 em,.enquire h2 em,.contact h2 em{font-style:normal;color:#a26b26}.intro-grid p{font:18px/1.8 "Cormorant Garamond",serif;margin:0;color:#59413b}.collections{background:#f3eadc}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:34px}.section-heading>p{max-width:390px;font:16px/1.7 "Cormorant Garamond",serif;margin:0;color:#6a4d42}.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{height:365px;position:relative;overflow:hidden;background:#333;display:flex;align-items:flex-end;color:#fff}.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(23,15,14,.82) 100%)}.card:hover img{transform:scale(1.06)}.card>span{position:absolute;left:20px;top:18px;z-index:2;font-size:11px;letter-spacing:.16em}.card>div{position:relative;z-index:2;padding:26px}.card h3{font:600 32px/1 "Cormorant Garamond",serif;margin:0 0 7px}.card p{margin:0;font:15px/1.35 "Cormorant Garamond",serif;color:#f4e7d8}.story-band{display:grid;grid-template-columns:1fr 1fr;min-height:600px;background:#eee2d2}.story-image{background:url('assets/hero-model.jpg') center/cover no-repeat;min-height:520px}.story-copy{padding:90px max(6vw,50px);display:flex;flex-direction:column;justify-content:center}.story-copy p{font:17px/1.75 "Cormorant Garamond",serif;max-width:570px;color:#59413b}.story-copy .text-link{margin-top:14px}.enquire{background:#084d4f;color:#f7ead8;text-align:center;position:relative;overflow:hidden}.enquire:before,.enquire:after{content:"";position:absolute;border:1px solid rgba(220,175,80,.25);border-radius:50%;width:420px;height:420px}.enquire:before{left:-220px;top:-150px}.enquire:after{right:-220px;bottom:-180px}.enquire-inner{position:relative;z-index:1;max-width:700px;margin:auto}.enquire .section-kicker{color:#d8a746}.enquire h2{color:#f7ead8;margin:14px 0 18px}.enquire p{font:18px/1.75 "Cormorant Garamond",serif;max-width:600px;margin:0 auto 28px;color:#e8d8c4}.contact{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;background:#fbf5e9}.contact-detail{display:grid;gap:26px}.contact-detail small{display:block;text-transform:uppercase;letter-spacing:.18em;color:#9a6422;font-size:10px;margin-bottom:6px}.contact-detail a:not(.button),.contact-detail p{font:22px "Cormorant Garamond",serif;margin:0}.contact-detail .button{width:max-content}footer{background:#5c1730;color:#f5e5d1;padding:55px max(6vw,50px) 24px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px}.footer-brand img{width:105px;background:#f7f0e4}.footer-brand p{font:17px/1.5 "Cormorant Garamond",serif}.footer-links{display:flex;justify-content:flex-end;align-items:start;gap:22px;flex-wrap:wrap;text-transform:uppercase;letter-spacing:.12em;font-size:10px}.copyright{grid-column:1/-1;border-top:1px solid rgba(232,194,122,.2);padding-top:18px;color:#d9c3af;font-size:10px;letter-spacing:.1em}@media(max-width:900px){.site-header{height:82px}.nav-shell{padding:0 18px}.brand{height:82px;width:92px}.brand img{width:88px;height:78px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:82px;left:0;right:0;background:#fbf5e9;padding:20px;flex-direction:column;align-items:stretch;gap:5px;border-bottom:1px solid #ddd}.nav-links.open{display:flex}.nav-links>a{text-align:center}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:60px 28px 46px}.hero-image{height:520px;min-height:0;background-position:center}.promise{grid-template-columns:1fr 1fr;padding:24px 18px}.promise>div{padding:16px 12px;border-right:0;border-bottom:1px solid rgba(230,185,90,.25)}.section{padding:70px 24px}.intro-grid,.contact{grid-template-columns:1fr;gap:30px}.section-heading{display:block}.section-heading>p{margin-top:18px}.collection-grid{grid-template-columns:1fr 1fr}.card{height:310px}.story-band{grid-template-columns:1fr}.story-image{min-height:390px}.story-copy{padding:65px 24px}footer{grid-template-columns:1fr}.footer-links{justify-content:flex-start}.copyright{grid-column:auto}}@media(max-width:560px){.top-line{height:10px}.hero h1{font-size:47px}.hero h2{font-size:28px}.hero-copy>p{font-size:16px}.hero-actions{flex-direction:column;align-items:flex-start}.hero-image{height:420px;background-position:62% center}.promise{grid-template-columns:1fr}.promise>div{border-bottom:1px solid rgba(230,185,90,.25)}.collection-grid{grid-template-columns:1fr}.card{height:360px}.section-heading h2{margin-top:8px}.footer-links{gap:14px}}
+
+
+/* Kanasu Sarees brand refinement: larger banner logo + subtle full-page watermark */
+:root {
+  --kanasu-watermark-opacity: 0.055;
+}
+
+/* Full-home-page watermark */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("assets/kanasu-logo.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 520px auto;
+  opacity: var(--kanasu-watermark-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep all real content above the watermark */
+header, main, footer, section, nav, .hero, .hero-section, .banner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Larger logo in the top banner/header */
+header .logo img,
+header img.logo,
+.site-header .logo img,
+.navbar .logo img,
+nav .logo img {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: auto !important;
+  transform: none !important;
+}
+
+/* If the logo is positioned as a header element, give it room */
+header .logo,
+.site-header .logo,
+.navbar .logo {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Hero watermark */
+.kanasu-hero-watermark {
+  position: absolute !important;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(520px, 42vw);
+  opacity: 0.075;
+  pointer-events: none;
+  z-index: 0;
+}
+.kanasu-hero-watermark img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero content stays above watermark */
+.hero > *:not(.kanasu-hero-watermark),
+.hero-section > *:not(.kanasu-hero-watermark),
+.banner > *:not(.kanasu-hero-watermark) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  header .logo img,
+  header img.logo,
+  .site-header .logo img,
+  .navbar .logo img,
+  nav .logo img {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+  .kanasu-hero-watermark {
+    width: 360px;
+    left: 2%;
+    opacity: 0.055;
+  }
+}
+
+@media (max-width: 600px) {
+  body::before {
+    background-size: 320px auto;
+    opacity: 0.04;
+  }
+  header .logo img,
+  header img.logo,
+  .site-header .logo img,
+  .navbar .logo img,
+  nav .logo img {
+    width: 125px !important;
+    max-width: 125px !important;
+  }
+  .kanasu-hero-watermark {
+    width: 260px;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    opacity: 0.045;
+  }
+}
+
+
+/* ===== KANASU FINAL ALIGNMENT REFINEMENT ===== */
+html, body { width: 100%; overflow-x: hidden; }
+
+.top-line { height: 12px; }
+
+.site-header {
+  height: 118px;
+  width: 100%;
+  background: #fbf5e9;
+  position: relative;
+  z-index: 20;
+}
+
+.nav-shell {
+  width: min(1320px, 100%);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand {
+  width: 190px !important;
+  height: 118px !important;
+  flex: 0 0 190px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  position: relative;
+  z-index: 5;
+}
+
+.brand img {
+  width: 172px !important;
+  max-width: 172px !important;
+  height: 112px !important;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.nav-links > a {
+  line-height: 1;
+}
+
+.hero {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 620px;
+  grid-template-columns: 50% 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy {
+  min-width: 0;
+  padding: 82px 64px 78px 84px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin-top: 20px;
+  letter-spacing: -.02em;
+}
+
+.hero-copy > p {
+  max-width: 560px;
+}
+
+.hero-image {
+  min-width: 0;
+  min-height: 620px;
+  background-size: cover;
+  background-position: 58% center;
+  position: relative;
+  z-index: 2;
+}
+
+.kanasu-hero-watermark {
+  left: 4%;
+  top: 50%;
+  width: min(480px, 38vw);
+  opacity: .045;
+  z-index: 1;
+}
+
+.promise {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.intro,
+.story-band,
+.enquire,
+.contact,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  z-index: 0 !important;
+  opacity: .035 !important;
+  background-size: 560px auto !important;
+}
+
+/* Footer brand stays visually balanced rather than oversized. */
+.footer-brand img {
+  width: 115px;
+  height: auto;
+  display: block;
+}
+
+/* Desktop spacing */
+@media (min-width: 1200px) {
+  .hero-copy { padding-left: 92px; }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .site-header { height: 88px; }
+  .nav-shell { padding: 0 22px; }
+  .brand {
+    width: 125px !important;
+    height: 88px !important;
+    flex-basis: 125px;
+  }
+  .brand img {
+    width: 120px !important;
+    max-width: 120px !important;
+    height: 82px !important;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero-copy {
+    padding: 64px 34px 52px;
+  }
+  .hero-image {
+    min-height: 520px;
+    height: 520px;
+    background-position: 58% center;
+  }
+  .kanasu-hero-watermark {
+    width: 360px;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%);
+    opacity: .035;
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .top-line { height: 8px; }
+  .site-header { height: 76px; }
+  .nav-shell { padding: 0 16px; }
+  .brand {
+    width: 105px !important;
+    height: 76px !important;
+    flex-basis: 105px;
+  }
+  .brand img {
+    width: 102px !important;
+    max-width: 102px !important;
+    height: 72px !important;
+  }
+  .hero-copy {
+    padding: 52px 22px 42px;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 52px);
+  }
+  .hero-image {
+    min-height: 420px;
+    height: 420px;
+    background-position: 61% center;
+  }
+  .kanasu-hero-watermark {
+    width: 260px;
+    opacity: .03;
+  }
+}
