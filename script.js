@@ -1,93 +1,56 @@
-const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav-links');toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false')});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const sections=[...document.querySelectorAll('main section[id]')];const links=[...document.querySelectorAll('.nav-links a')];const setActive=()=>{let current='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-180)current=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))};addEventListener('scroll',setActive,{passive:true});setActive();
+/* Kanasu Sarees public site - Supabase powered */
+const sbUrl = window.KANASU_SUPABASE_URL;
+const sbKey = window.KANASU_SUPABASE_ANON_KEY;
+const hasSupabase = sbUrl && sbKey && !sbUrl.includes('YOUR_') && !sbKey.includes('YOUR_');
+const db = hasSupabase ? window.supabase.createClient(sbUrl, sbKey) : null;
 
-// Data-driven content and lightweight dynamic interactions.
-(() => {
-  const c = window.KANASU_CONTENT;
-  if (!c) return;
+const fallback = {
+  settings: {
+    brand_name:'KANASU SAREES',
+    tagline:'Timeless Weaves. Rooted in Tradition. Woven for Generations.',
+    intro:'Kanasu Sarees celebrates the beauty of Indian textiles through thoughtfully curated weaves, expressive colours and enduring craftsmanship. Every saree carries the quiet character of the hands, looms and traditions behind it.',
+    story_title:'Woven with heritage. Chosen with heart.',
+    story_text:'Kanasu is a celebration of Indian textile artistry—where heritage techniques meet contemporary elegance. We bring together graceful handloom traditions and timeless drapes for women who appreciate authenticity, detail and stories woven into every thread.',
+    email:'kanasusarees@gmail.com'
+  },
+  slides:[
+    {eyebrow:'Kanasu Sarees',title:'Timeless Weaves. Rooted in Tradition.',description:'Discover sarees shaped by heritage, artisan skill and a love for beautiful drapes.',image:'assets/hero-model.jpg'}
+  ],
+  collections:[
+    {name:'Mul Cotton',description:'Light, airy and effortlessly graceful.',image:'assets/mul-cotton.jpg'},
+    {name:'Dola Silks',description:'Rich texture with a luminous drape.',image:'assets/dola-silks.jpg'},
+    {name:'Maheshwari',description:'A classic weave with refined character.',image:'assets/maheshwari.jpg'},
+    {name:'Ajrakh Dola',description:'Artful colour and traditional print language.',image:'assets/ajrakh-dola.jpg'},
+    {name:'Modal Silks',description:'Soft movement with an elegant finish.',image:'assets/modal-silks.jpg'},
+    {name:'Linen',description:'Natural texture for modern, timeless dressing.',image:'assets/linen.jpg'}
+  ]
+};
 
-  const hero = document.querySelector('#hero-content');
-  if (hero) {
-    const h1 = hero.querySelector('h1');
-    const h2 = hero.querySelector('h2');
-    const p = hero.querySelector('p');
-    const eyebrow = hero.querySelector('.eyebrow');
-    const action = hero.querySelector('.text-link');
-    if (eyebrow) eyebrow.textContent = c.hero.eyebrow;
-    if (h1) h1.innerHTML = `${c.hero.title}<br><span>${c.hero.titleAccent}</span>`;
-    if (h2) h2.textContent = c.hero.subtitle;
-    if (p) p.textContent = c.hero.description;
-    if (action) action.textContent = `${c.hero.action} →`;
-  }
+function text(id, value){ const el=document.getElementById(id); if(el) el.textContent=value||''; }
+function img(id, value){ const el=document.getElementById(id); if(el && value) el.src=value; }
+function escapeHtml(v){ return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
 
-  const promise = document.querySelector('#promise-content');
-  if (promise) {
-    promise.innerHTML = c.promise.map(item => `<div><span>${item.icon}</span><strong>${item.title}</strong><p>${item.text}</p></div>`).join('');
-  }
-
-  const story = document.querySelector('#story-intro-content');
-  if (story) {
-    story.innerHTML = `<h2>${c.story.title}<br><em>${c.story.accent}</em></h2><p>${c.story.text}</p>`;
-  }
-
-  const enquiry = document.querySelector('#enquiry-content');
-  if (enquiry) {
-    enquiry.innerHTML = `<div class="section-kicker">${c.enquiry.kicker}</div><h2>${c.enquiry.title}<br><em>${c.enquiry.accent}</em></h2><p>${c.enquiry.text}</p><a class="button primary" href="mailto:${c.brand.email}?subject=Kanasu%20Sarees%20Enquiry">Send an Enquiry <span>↗</span></a>`;
-  }
-
-  const contact = document.querySelector('#contact-content');
-  if (contact) {
-    contact.innerHTML = `<div><small>Email</small><a href="mailto:${c.brand.email}">${c.brand.email}</a></div><div><small>Enquiries</small><p>${c.contact.enquiryLabel}</p></div><div><small>Location</small><p>${c.brand.location}</p></div><a class="button outline" href="mailto:${c.brand.email}?subject=Kanasu%20Sarees%20Enquiry">Contact Kanasu <span>↗</span></a>`;
-  }
-
-  document.querySelectorAll('.footer-brand').forEach(el => {
-    const p = el.querySelector('p');
-    if (p) p.innerHTML = c.brand.tagline.replace('. ', '.<br>');
-  });
-
-  // Dynamic year.
-  document.querySelectorAll('.copyright').forEach(el => {
-    el.textContent = `© ${new Date().getFullYear()} Developed & Maintained by AltekNetworks. All rights reserved.`;
-  });
-
-  // Rotating hero accent line.
-  const rotating = c.hero.rotatingLines || [];
-  const h2 = document.querySelector('#hero-content h2');
-  if (rotating.length > 1 && h2) {
-    let i = 0;
-    setInterval(() => {
-      i = (i + 1) % rotating.length;
-      h2.classList.add('changing');
-      setTimeout(() => { h2.textContent = rotating[i]; h2.classList.remove('changing'); }, 180);
-    }, 4200);
-  }
-
-  // Dynamic collections modal, keeping the homepage uncluttered.
-  const collections = [
-    ['Mul Cotton', 'assets/mul-cotton.jpg'],
-    ['Dola Silks', 'assets/dola-silks.jpg'],
-    ['Maheshwari', 'assets/maheshwari.jpg'],
-    ['Ajrakh Dola', 'assets/ajrakh-dola.jpg'],
-    ['Modal Silks', 'assets/modal-silks.jpg'],
-    ['Linen', 'assets/linen.jpg']
-  ];
-  const grid = document.querySelector('#collection-grid');
-  if (grid) grid.innerHTML = collections.map(([name, img]) => `<article class="collection-card"><img src="${img}" alt="${name} saree"><span>${name}</span></article>`).join('');
-
-  const modal = document.querySelector('#collections-modal');
-  const openModal = () => { if (!modal) return; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); };
-  const closeModal = () => { if (!modal) return; modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); };
-  document.querySelectorAll('a[href="#collections"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openModal(); }));
-  document.querySelectorAll('[data-close-collections]').forEach(el => el.addEventListener('click', closeModal));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  // Reveal sections as they enter the viewport.
-  const reveal = document.querySelectorAll('main section, footer');
-  reveal.forEach(el => el.classList.add('reveal'));
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-    }), { threshold: .08 });
-    reveal.forEach(el => observer.observe(el));
-  } else reveal.forEach(el => el.classList.add('visible'));
-})();
+function render(data){
+  const s=data.settings||fallback.settings, slide=(data.slides||fallback.slides)[0]||fallback.slides[0];
+  document.title=s.brand_name||'Kanasu Sarees';
+  text('hero-eyebrow',slide.eyebrow); text('hero-title',slide.title); text('hero-description',slide.description);
+  img('hero-image',slide.image);
+  text('home-intro',s.intro); text('story-title',s.story_title); text('story-text',s.story_text);
+  document.querySelectorAll('[data-email]').forEach(a=>{a.textContent=s.email||fallback.settings.email; a.href='mailto:'+(s.email||fallback.settings.email)});
+  const grid=document.getElementById('collections-grid');
+  if(grid) grid.innerHTML=(data.collections||[]).map(c=>`<article class="collection-card"><img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)}"><div><span>Kanasu Collection</span><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.description)}</p></div></article>`).join('');
+}
+async function load(){
+  if(!db){ render(fallback); document.body.classList.add('demo-mode'); return; }
+  try{
+    const [settings,slides,collections]=await Promise.all([
+      db.from('site_settings').select('*').order('key'),
+      db.from('hero_slides').select('*').eq('published',true).order('sort_order'),
+      db.from('collections').select('*').eq('published',true).order('sort_order')
+    ]);
+    if(settings.error) throw settings.error;
+    const map={}; (settings.data||[]).forEach(r=>map[r.key]=r.value);
+    render({settings:{...fallback.settings,...map},slides:slides.data?.length?slides.data:fallback.slides,collections:collections.data?.length?collections.data:fallback.collections});
+  }catch(e){ console.warn('Supabase unavailable; showing built-in content.',e); render(fallback); }
+}
+document.addEventListener('DOMContentLoaded',load);

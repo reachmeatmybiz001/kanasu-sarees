@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kanasu Admin</title>
+<link rel="stylesheet" href="admin.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script></head>
+<body><main class="admin-wrap">
+<header><div><img src="assets/kanasu-logo.png" alt="Kanasu" class="admin-logo"><h1>Kanasu Content Studio</h1><p>Manage the live website without editing code.</p></div><button id="logout" class="ghost hidden">Sign out</button></header>
+<section id="setup" class="notice"><strong>First-time setup</strong><p>Configure <code>supabase-config.js</code>, run <code>supabase/schema.sql</code> in Supabase SQL Editor, then create an admin user in Supabase Authentication.</p></section>
+<section id="login" class="panel"><h2>Admin login</h2><form id="loginForm"><input id="email" type="email" placeholder="Admin email" required><input id="password" type="password" placeholder="Password" required><button>Sign in</button><p id="loginMsg"></p></form></section>
+<section id="dashboard" class="hidden">
+<div class="tabs"><button data-tab="home" class="active">Home</button><button data-tab="collections">Collections</button><button data-tab="hero">Hero</button></div>
+<div id="tab-home" class="panel"><h2>Home &amp; Story</h2><form id="settingsForm"><label>Brand name<input id="brand_name"></label><label>Tagline<input id="tagline"></label><label>Home introduction<textarea id="intro" rows="5"></textarea></label><label>Story title<input id="story_title"></label><label>Story text<textarea id="story_text" rows="6"></textarea></label><label>Contact email<input id="email_setting" type="email"></label><button>Save Home Content</button><p class="status" id="settingsStatus"></p></form></div>
+<div id="tab-collections" class="panel hidden"><div class="panel-head"><h2>Collections</h2><button id="newCollection">+ Add Collection</button></div><div id="collectionList"></div></div>
+<div id="tab-hero" class="panel hidden"><div class="panel-head"><h2>Hero Slides</h2><button id="newHero">+ Add Slide</button></div><div id="heroList"></div></div>
+</section></main><script src="admin.js"></script></body></html>
