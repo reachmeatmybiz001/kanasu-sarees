@@ -34,11 +34,11 @@ function render(data){
   const s=data.settings||fallback.settings, slide=(data.slides||fallback.slides)[0]||fallback.slides[0];
   document.title=s.brand_name||'Kanasu Sarees';
   text('hero-eyebrow',slide.eyebrow); text('hero-title',slide.title); text('hero-description',slide.description);
-  img('hero-image',slide.image);
+  img('hero-image',slide.image_url || slide.image);
   text('home-intro',s.intro); text('story-title',s.story_title); text('story-text',s.story_text);
   document.querySelectorAll('[data-email]').forEach(a=>{a.textContent=s.email||fallback.settings.email; a.href='mailto:'+(s.email||fallback.settings.email)});
   const grid=document.getElementById('collections-grid');
-  if(grid) grid.innerHTML=(data.collections||[]).map(c=>`<article class="collection-card"><img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name)}"><div><span>Kanasu Collection</span><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.description)}</p></div></article>`).join('');
+  if(grid) grid.innerHTML=(data.collections||[]).map(c=>`<article class="collection-card"><img src="${escapeHtml(c.image_url || c.image)}" alt="${escapeHtml(c.name)}"><div><span>Kanasu Collection</span><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.description)}</p></div></article>`).join('');
 }
 async function load(){
   if(!db){ render(fallback); document.body.classList.add('demo-mode'); return; }
