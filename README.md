@@ -17,9 +17,10 @@ GitHub Pages remains the static frontend host; Supabase provides authentication 
 5. Open `supabase-config.js` and replace:
    - `YOUR_SUPABASE_PROJECT_URL`
    - `YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY`
-6. Push the complete folder to GitHub.
-7. Enable GitHub Pages for the repository.
-8. Visit `/admin.html` and sign in.
+6. This package already contains the configured Supabase project URL and publishable key for the Kanasu project. Do not replace it with a secret/service-role key.
+7. Push the complete folder to GitHub.
+8. Enable GitHub Pages for the repository.
+9. Visit `/admin.html` and sign in.
 
 Supabase's browser client supports Auth and database operations, and the publishable/anon key is intended for client-side initialization; do not expose a service-role key in this repository. citeturn0search0turn0search1
 
@@ -48,3 +49,8 @@ Never put a Supabase `service_role` key in GitHub Pages.
 - Publish/unpublish content
 
 For image uploads, create the `kanasu-media` Storage bucket as described in `supabase/STORAGE.md`, then use its public URLs in the admin forms.
+
+
+## Admin login fix included
+
+This build includes a hardened Supabase initialization flow, support for `sb_publishable_...` browser keys, persistent sessions, clearer login errors, and cache-busting query strings for GitHub Pages so an older cached `supabase-config.js` or `admin.js` is less likely to be used.

@@ -1,7 +1,7 @@
 /* Kanasu Sarees public site - Supabase powered */
 const sbUrl = window.KANASU_SUPABASE_URL;
 const sbKey = window.KANASU_SUPABASE_ANON_KEY;
-const hasSupabase = sbUrl && sbKey && !sbUrl.includes('YOUR_') && !sbKey.includes('YOUR_');
+const hasSupabase = Boolean(sbUrl && sbKey && !sbUrl.includes('YOUR_') && !sbKey.includes('YOUR_') && /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(sbUrl) && (sbKey.startsWith('sb_publishable_') || sbKey.startsWith('eyJ')));
 const db = hasSupabase ? window.supabase.createClient(sbUrl, sbKey) : null;
 
 const fallback = {
